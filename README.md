@@ -1,5 +1,27 @@
 [English](./README.md) / [Spanish](./README_es.md) / [Korean](./README_ko.md) / [Chinese](./README_zh.md) / [Bengali](./README_bn.md) / [Indonesian](./README_id.md) / [Italian](./README_it.md) / [Portuguese](./README_pt.md) / [Vietnamese](./README_vn.md) / [Japanese](./README_ja.md)
 
+# How to run these notebooks
+- Open notebook folder on Visual Studio Code.
+- Open the terminal of Visual Studio Code. The path should point to the root folder.
+- Type `jupyter notebook` or `python -m jupyter notebook` and Enter. The notebook should open on a new browser tab. The reason for `python -m` is if you don't have pip on environment variables.
+
+# Register python scripts on Windows Environment Variables
+- If you don't want to keep typing `python -m` on every run and are using Windows platform, you can follow this instructions.
+- To test if you have already registered the python scripts on environment variables, open a new command prompt and type `pip --version`. If the command returns correct version, you have already registered the scripts to environment variables. Otherwise, continue.
+- First, find the location of your python scripts. Type `where python` on command prompt. It should return python location, such as `C:\Users\username\miniforge3\python.exe`.
+- The location you need is the "Scripts" folder on the sibling location. For example, this case would be `C:\Users\username\miniforge3\Scripts`.
+- Now, go to Windows Search and find `Edit the system environment variables`.
+- Click Environment Variables on bottom-right.
+- Choose either "user variables" or "system variables". The difference between the two is "user variables" will only change the setting for your user account, while "system variables" change will be applied to all user accounts on the computer.
+- Find variable "Path" and edit it.
+- Add the scripts location from earlier, i.e. `C:\Users\username\miniforge3\Scripts`
+- Confirm all changes. To test, open a new command prompt and type `pip --version`.
+
+# Error graphviz, gv command
+- If graphviz, gv command doesn't work with error: `failed to execute Path('dot'), make sure the Graphviz executables are on your systems' PATH`, run the instruction from https://github.com/RedaOps/ann-visualizer/issues/12.
+- Install graphviz from https://graphviz.org/download/ if you haven't already and you have error when running gv command.
+- You may need to restart your computer for the changes to take effec.
+
 # The fastai book
 
 These notebooks cover an introduction to deep learning, [fastai](https://docs.fast.ai/), and [PyTorch](https://pytorch.org/). fastai is a layered API for deep learning; for more information, see [the fastai paper](https://www.mdpi.com/2078-2489/11/2/108). Everything in this repo is copyright Jeremy Howard and Sylvain Gugger, 2020 onwards. A selection of chapters is available to [read online here](https://fastai.github.io/fastbook2e/).
